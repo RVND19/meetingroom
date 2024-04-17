@@ -1,0 +1,43 @@
+# curl create user
+
+curl --request PUT \
+  --url http://localhost:8086/user \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --data '{
+	"name": "dummy1",
+	"email": "dummy1@example.com",
+	"password":"12345"
+}'
+
+
+#curl create room 
+
+curl --request PUT \
+  --url http://localhost:8086/room \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --data '{
+	"name": "Test 1"
+}'
+
+
+#reservation
+curl --request PUT \
+  --url http://localhost:8086/reservation \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1' \
+  --data '{
+	"roomId": 1,
+	"email": "dummy1@example.com",
+	"password":"12345",
+	"startDate": "2024-03-01 16:00:00",
+	"endDate": "2024-03-01 17:00:00"
+}'
+
+
+//get detail reservation
+curl --request GET \
+  --url http://localhost:8086/reservation/39 \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/8.6.1'
